@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-canvas: #FFF8E7;
+  --color-ink: #141414;
+  --color-primary: #FFD12E;
+  --color-berry: #FF3E8A;
+  --color-mint: #00E5A3;
+  --color-sky: #38BDF8;
+  --color-tomato: #FF4F2E;
+  --color-lime: #A3E635;
+  --color-violet: #8B5CF6;
+}
+
+::selection {
+  background-color: #FFD12E;
+  color: #141414;
+}
+
+::-moz-selection {
+  background-color: #FFD12E;
+  color: #141414;
+}
+
+html {
+  background-color: #FFF8E7;
+  color: #141414;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #FFF8E7;
+  color: #141414;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Consistent Neo-Brutalist Hard Offset Shadow */
+.shadow-ink {
+  box-shadow: 4px 4px 0px #141414;
+}
+
+/* Consistent Button Hover State: shift 2px and reduce shadow with a short transition */
+.btn-pressable {
+  box-shadow: 4px 4px 0px #141414;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.btn-pressable:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #141414;
+}
+
+.btn-pressable:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #141414;
+}
+
+/* Meaning-based Highlight Marks for Resume Inspection */
+.highlight-must-fix {
+  background-color: rgba(255, 62, 138, 0.22);
+  border-bottom: 3px solid #FF3E8A;
+  padding: 1px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.highlight-must-fix:hover {
+  background-color: rgba(255, 62, 138, 0.38);
+}
+
+.highlight-improve {
+  background-color: rgba(255, 209, 46, 0.38);
+  border-bottom: 3px solid #141414;
+  padding: 1px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.highlight-improve:hover {
+  background-color: rgba(255, 209, 46, 0.65);
+}
+
+.highlight-good {
+  background-color: rgba(0, 229, 163, 0.25);
+  border-bottom: 3px solid #00E5A3;
+  padding: 1px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.highlight-good:hover {
+  background-color: rgba(0, 229, 163, 0.45);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8E7;
+  border-left: 3px solid #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD12E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
