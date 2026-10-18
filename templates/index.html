@@ -289,7 +289,7 @@ textarea#paste-resume{width:100%;min-height:140px;background:#FFF8E7;border:3px 
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
         <span class="drop-icon">📄</span>
         <div class="drop-title">Drop your resume here (PDF or DOCX), or paste the text</div>
-        <div class="drop-hint">Or click to browse your computer (up to 5 MB)</div>
+        <div class="drop-hint">Or click to browse your computer (up to 4 MB)</div>
         <div class="drop-formats">
           <span class="drop-fmt" style="background:#FFD12E">PDF</span>
           <span class="drop-fmt" style="background:#00E5A3">DOCX</span>
@@ -547,8 +547,8 @@ function uploadFile(file){
     showErr('Unsupported file format. Please upload a PDF, DOCX, or TXT file.');
     return;
   }
-  if(file.size > 5 * 1024 * 1024){
-    showErr('File size exceeds 5 MB. Please upload a smaller resume document.');
+  if(file.size > 4 * 1024 * 1024){
+    showErr('File size exceeds 4 MB. Please upload a smaller resume document.');
     return;
   }
   if(file.size === 0){

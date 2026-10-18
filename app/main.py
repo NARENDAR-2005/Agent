@@ -258,8 +258,8 @@ async def upload_resume(file: UploadFile = File(...)):
     content = await file.read()
     if len(content) == 0:
         raise HTTPException(status_code=400, detail="The uploaded file is empty. Please upload a valid resume.")
-    if len(content) > 5 * 1024 * 1024:
-        raise HTTPException(status_code=400, detail="File size exceeds 5 MB. Please upload a smaller resume document.")
+    if len(content) > 4 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="File size exceeds 4 MB. Please upload a smaller resume document.")
 
     temp_dir = os.path.join(BASE_DIR, "data", "uploads")
     os.makedirs(temp_dir, exist_ok=True)
@@ -295,8 +295,8 @@ async def upload_and_match(file: UploadFile = File(...)):
     content = await file.read()
     if len(content) == 0:
         raise HTTPException(status_code=400, detail="The uploaded file is empty. Please upload a valid resume.")
-    if len(content) > 5 * 1024 * 1024:
-        raise HTTPException(status_code=400, detail="File size exceeds 5 MB. Please upload a smaller resume document.")
+    if len(content) > 4 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="File size exceeds 4 MB. Please upload a smaller resume document.")
 
     temp_dir = os.path.join(BASE_DIR, "data", "uploads")
     os.makedirs(temp_dir, exist_ok=True)
